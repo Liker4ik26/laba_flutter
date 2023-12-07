@@ -65,6 +65,7 @@ class ProfilePage extends HookWidget {
                       color: context.theme.colorScheme.primary.withOpacity(.55),
                     ),
                   ).paddingSymmetric(horizontal: 16),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: 160,
                     child: ListView.separated(
@@ -82,16 +83,17 @@ class ProfilePage extends HookWidget {
                   ),
                   const SizedBox(height: 46),
                   Text(
-                    context.tr.youHaveConnected,
+                    context.tr.tariffsAndLimits,
                     style: context.theme.textTheme.labelMedium,
                   ).paddingSymmetric(horizontal: 16),
                   const SizedBox(height: 8),
                   Text(
-                    context.tr.subscriptions,
+                    context.tr.forTransactions,
                     style: context.theme.textTheme.labelSmall?.copyWith(
                       color: context.theme.colorScheme.primary.withOpacity(.55),
                     ),
                   ).paddingSymmetric(horizontal: 16),
+                  const SizedBox(height: 20),
                   TariffsCard(
                     image: Assets.iconsPressure,
                     name: context.tr.dailyLimit,
