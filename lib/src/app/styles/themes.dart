@@ -14,6 +14,8 @@ abstract class AppThemes {
       tertiaryContainer: AppColors.mercury,
       primary: Colors.black,
       onPrimary: AppColors.shamrockGreen,
+      onBackground: AppColors.shadow,
+      onSecondary: AppColors.laSalleGreen,
       secondary: Colors.white,
     ),
     textTheme: TextTheme(
@@ -24,6 +26,9 @@ abstract class AppThemes {
         color: Colors.black,
       ),
       labelSmall: AppTypography.labelSmall.copyWith(
+        color: Colors.black,
+      ),
+      headlineLarge: AppTypography.headlineLarge.copyWith(
         color: Colors.black,
       ),
     ),
