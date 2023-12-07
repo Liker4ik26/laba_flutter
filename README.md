@@ -1,16 +1,21 @@
-# laba_flutter
+# Flutter labs (User profile)
+## Description
+The profile screen, where you can see which services are connected, which tariffs are connected, choose your own interests and contains other useful functions that will simplify your life.
+## Screenshots
 
-A new Flutter project.
+## The User profile Screen
 
-## Getting Started
+|                The User profile Screen                  |
+|:-----------------------------------------------:|
+| ![image](https://github.com/Liker4ik26/laba_flutter/assets/104251391/579ee835-acd3-41ce-9a69-0e9f8fc7d054)|
+| ![image](https://github.com/Liker4ik26/laba_flutter/assets/104251391/88dd0efc-1890-4677-ad74-ba414f2b12d5)|
 
-This project is a starting point for a Flutter application.
+## Specification
 
-A few resources to get you started if this is your first Flutter project:
+* Flutter version 3.13.7
+* Dart version 3.1.3
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## My contacts
+* [VK](https://vk.com/liker4ik50)
+* [Telegram](https://t.me/Liker4ik50)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
