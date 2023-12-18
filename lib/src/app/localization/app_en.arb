@@ -1,4 +1,17 @@
 {
   "@@locale": "en",
-  "appTitle": "flutter_labs"
+  "appTitle": "flutter_labs",
+  "tabNameProfile": "Profile",
+  "tabNameSettings": "Settings",
+  "youHaveConnected": "You have connected",
+  "subscriptions": "Subscriptions, autopayments and services for which\nYou have subscribed",
+  "tariffsAndLimits": "Tariffs and limits",
+  "forTransactions": "For transactions in Sberbank Online",
+  "dailyLimit": "Change the daily limit",
+  "forPaymentsAndTransfers": "For payments and transfers",
+  "transfersWithoutCommission": "Transfers without commission",
+  "showBalance": "Show the balance in this month",
+  "informationTariffsAndLimits": "Information about tariffs \n and limits",
+  "interests": "Interests",
+  "storiesAndSuggestions": "We select stories and suggestions on topics\n that you like"
 }
