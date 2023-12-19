@@ -22,47 +22,55 @@ class ServiceCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: context.theme.colorScheme.secondary,
         borderRadius: BorderRadius.circular(AppDimensions.extraSmall),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Color(0x114F4F6C),
+            color: context.theme.colorScheme.onTertiary,
             blurRadius: AppDimensions.small,
-            offset: Offset(0, 8),
+            offset: const Offset(0, 8),
             spreadRadius: 0,
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(AppDimensions.extraSmall),
+        child: InkWell(
+          onTap: () {},
+          borderRadius: BorderRadius.circular(AppDimensions.extraSmall),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
-                radius: 18,
-                backgroundColor: context.theme.colorScheme.background,
-                child: SvgPicture.asset(
-                  serviceModel.image,
-                  width: 36,
-                  height: 36,
-                ),
-              ),
-              const SizedBox(width: 12),
+              Row(
+                children: [
+                  CircleAvatar(
+                    radius: 18,
+                    backgroundColor: context.theme.colorScheme.background,
+                    child: SvgPicture.asset(
+                      serviceModel.image,
+                      width: 36,
+                      height: 36,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Text(
+                    serviceModel.name,
+                    style: context.theme.textTheme.headlineLarge,
+                  ),
+                ],
+              ).paddingOnly(left: 16, top: 14, bottom: 22),
               Text(
-                serviceModel.name,
-                style: context.theme.textTheme.headlineLarge,
-              ),
+                serviceModel.description,
+                style: context.theme.textTheme.labelSmall,
+              ).paddingSymmetric(horizontal: 16),
+              Text(
+                serviceModel.price,
+                style: context.theme.textTheme.labelSmall?.copyWith(
+                  color: context.theme.colorScheme.primary.withOpacity(.55),
+                ),
+              ).paddingOnly(left: 16, bottom: 16),
             ],
-          ).paddingOnly(left: 16, top: 14, bottom: 22),
-          Text(
-            serviceModel.description,
-            style: context.theme.textTheme.labelSmall,
-          ).paddingSymmetric(horizontal: 16),
-          Text(
-            serviceModel.price,
-            style: context.theme.textTheme.labelSmall?.copyWith(
-              color: context.theme.colorScheme.primary.withOpacity(.55),
-            ),
-          ).paddingOnly(left: 16, bottom: 16),
-        ],
+          ),
+        ),
       ),
     );
   }

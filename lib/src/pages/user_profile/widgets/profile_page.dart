@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:laba_flutter/src/pages/user_profile/models/interest_model.dart';
 import 'package:laba_flutter/src/pages/user_profile/models/service_model.dart';
+import 'package:laba_flutter/src/pages/user_profile/models/tariff_model.dart';
+import 'package:laba_flutter/src/pages/user_profile/widgets/section_header_widget.dart';
 import 'package:laba_flutter/src/pages/user_profile/widgets/service_card.dart';
 import 'package:laba_flutter/src/pages/user_profile/widgets/tariffs_card.dart';
 import 'package:laba_flutter/src/pages/user_profile/widgets/theme_chip.dart';
@@ -26,6 +28,27 @@ class ProfilePage extends HookWidget {
         name: 'Переводы',
         description: 'Автопродление 21 августа',
         price: '199 ₽ в месяц',
+      ),
+    ];
+
+    final tariffs = [
+      TariffModel(
+        () {},
+        image: Assets.iconsPressure,
+        name: context.tr.dailyLimit,
+        description: context.tr.forPaymentsAndTransfers,
+      ),
+      TariffModel(
+        () {},
+        image: Assets.iconsPercent,
+        name: context.tr.transfersWithoutCommission,
+        description: context.tr.showBalance,
+      ),
+      TariffModel(
+        () {},
+        description: '',
+        image: Assets.iconsIarrowsForwardBack,
+        name: context.tr.informationTariffsAndLimits,
       ),
     ];
     final interestsList = [
@@ -54,17 +77,10 @@ class ProfilePage extends HookWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 30),
-                  Text(
-                    context.tr.youHaveConnected,
-                    style: context.theme.textTheme.labelMedium,
-                  ).paddingSymmetric(horizontal: 16),
-                  const SizedBox(height: 8),
-                  Text(
-                    context.tr.subscriptions,
-                    style: context.theme.textTheme.labelSmall?.copyWith(
-                      color: context.theme.colorScheme.primary.withOpacity(.55),
-                    ),
-                  ).paddingSymmetric(horizontal: 16),
+                  SectionHeaderWidget(
+                    title: context.tr.youHaveConnected,
+                    subtitle: context.tr.subscriptions,
+                  ),
                   const SizedBox(height: 20),
                   SizedBox(
                     height: 160,
@@ -82,60 +98,36 @@ class ProfilePage extends HookWidget {
                     ),
                   ),
                   const SizedBox(height: 46),
-                  Text(
-                    context.tr.tariffsAndLimits,
-                    style: context.theme.textTheme.labelMedium,
-                  ).paddingSymmetric(horizontal: 16),
-                  const SizedBox(height: 8),
-                  Text(
-                    context.tr.forTransactions,
-                    style: context.theme.textTheme.labelSmall?.copyWith(
-                      color: context.theme.colorScheme.primary.withOpacity(.55),
-                    ),
-                  ).paddingSymmetric(horizontal: 16),
+                  SectionHeaderWidget(
+                    title: context.tr.tariffsAndLimits,
+                    subtitle: context.tr.forTransactions,
+                  ),
                   const SizedBox(height: 20),
-                  TariffsCard(
-                    image: Assets.iconsPressure,
-                    name: context.tr.dailyLimit,
-                    description: context.tr.forPaymentsAndTransfers,
-                    onTap: () {},
-                  ),
-                  Divider(
-                    color: context.theme.colorScheme.primary.withOpacity(.12),
-                    thickness: 2,
-                    indent: 60,
-                    endIndent: 0,
-                  ),
-                  TariffsCard(
-                    image: Assets.iconsPercent,
-                    name: context.tr.transfersWithoutCommission,
-                    description: context.tr.showBalance,
-                    onTap: () {},
-                  ),
-                  Divider(
-                    color: context.theme.colorScheme.primary.withOpacity(.12),
-                    thickness: 2,
-                    indent: 60,
-                    endIndent: 0,
-                  ),
-                  TariffsCard(
-                    description: '',
-                    image: Assets.iconsIarrowsForwardBack,
-                    name: context.tr.informationTariffsAndLimits,
-                    onTap: () {},
+                  CustomScrollView(
+                    shrinkWrap: true,
+                    slivers: [
+                      SliverList.separated(
+                        itemBuilder: (context, index) {
+                          return TariffsCard(
+                            tariffModel: tariffs[index],
+                          );
+                        },
+                        separatorBuilder: (context, index) => Divider(
+                          color: context.theme.colorScheme.primary
+                              .withOpacity(.12),
+                          thickness: 2,
+                          indent: 60,
+                          endIndent: 0,
+                        ),
+                        itemCount: tariffs.length,
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 46),
-                  Text(
-                    context.tr.interests,
-                    style: context.theme.textTheme.labelMedium,
-                  ).paddingSymmetric(horizontal: 16),
-                  const SizedBox(height: 8),
-                  Text(
-                    context.tr.storiesAndSuggestions,
-                    style: context.theme.textTheme.labelSmall?.copyWith(
-                      color: context.theme.colorScheme.primary.withOpacity(.55),
-                    ),
-                  ).paddingSymmetric(horizontal: 16),
+                  SectionHeaderWidget(
+                    title: context.tr.interests,
+                    subtitle: context.tr.storiesAndSuggestions,
+                  ),
                   const SizedBox(height: 16),
                   Wrap(
                     spacing: 8,

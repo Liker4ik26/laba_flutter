@@ -29,6 +29,8 @@ class UserProfileAppBar extends StatelessWidget {
       leadingWidth: 68,
       leading: PrimaryIconButton(
         backgroundColor: context.theme.colorScheme.secondary,
+        onClick: () {},
+        padding: EdgeInsets.zero,
         icon: Assets.iconsClose,
         iconColor: context.theme.colorScheme.onPrimary,
       ),
@@ -36,6 +38,7 @@ class UserProfileAppBar extends StatelessWidget {
         PrimaryIconButton(
           backgroundColor: context.theme.colorScheme.secondary,
           icon: Assets.iconsLogOut,
+          onClick: () {},
           iconColor: context.theme.colorScheme.onPrimary,
         ).paddingOnly(right: 14),
       ],

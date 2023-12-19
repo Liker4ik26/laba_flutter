@@ -28,7 +28,7 @@ class UserProfileScreen extends StatelessWidget {
                   tabs: tabs.map((e) {
                     return Tab(text: e);
                   }).toList(),
-                  username: 'Екатерина',
+                  username: context.tr.userName,
                   userPhoto: Assets.imagesUserPhoto,
                 ),
               ),
