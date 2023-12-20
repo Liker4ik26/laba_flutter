@@ -17,19 +17,20 @@ abstract class AppThemes {
       onBackground: AppColors.shadow,
       onSecondary: AppColors.laSalleGreen,
       secondary: Colors.white,
+      onTertiary:AppColors.laGrey,
     ),
     textTheme: TextTheme(
       labelLarge: AppTypography.labelLarge.copyWith(
-        color: Colors.black,
+        color:AppColors.black,
       ),
       labelMedium: AppTypography.labelMedium.copyWith(
-        color: Colors.black,
+        color: AppColors.black,
       ),
       labelSmall: AppTypography.labelSmall.copyWith(
-        color: Colors.black,
+        color: AppColors.black,
       ),
       headlineLarge: AppTypography.headlineLarge.copyWith(
-        color: Colors.black,
+        color: AppColors.black,
       ),
     ),
     appBarTheme: const AppBarTheme(
