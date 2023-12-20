@@ -46,7 +46,7 @@ class ProfilePage extends HookWidget {
       ),
       TariffModel(
         () {},
-        description: '',
+        description: null,
         image: Assets.iconsIarrowsForwardBack,
         name: context.tr.informationTariffsAndLimits,
       ),
